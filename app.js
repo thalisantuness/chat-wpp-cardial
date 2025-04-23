@@ -1,32 +1,33 @@
 const venom = require("venom-bot");
 const cron = require("node-cron");
+const qrcode = require("qrcode-terminal");
 
-// Configuração do WhatsApp Bot
 venom
   .create({
     session: "chatgpt-bot",
     headless: true,
     browserArgs: [
-        '--no-sandbox',
-        '--disable-setuid-sandbox',
-        '--disable-dev-shm-usage',
-        '--disable-accelerated-2d-canvas',
-        '--no-first-run',
-        '--no-zygote',
-        '--single-process',
-        '--disable-gpu'
-      ],
-      puppeteerOptions: { 
-        executablePath: process.env.CHROME_PATH || '/usr/bin/chromium-browser',
-        args: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox'
-        ]
-      }
+      "--no-sandbox",
+      "--disable-setuid-sandbox",
+      "--disable-dev-shm-usage",
+      "--disable-accelerated-2d-canvas",
+      "--no-first-run",
+      "--no-zygote",
+      "--single-process",
+      "--disable-gpu",
+    ],
+    puppeteerOptions: {
+      executablePath: process.env.CHROME_PATH || "/usr/bin/chromium-browser",
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    },
+    qrCode: (base64Qr, asciiQR) => {
+      console.log("🔐 Escaneie o QR Code abaixo para autenticar no WhatsApp:");
+      qrcode.generate(base64Qr, { small: true });
+    },
   })
   .then((client) => {
-    start(client); // Inicia o chatbot
-    setupScheduledMessages(client); // Configura as mensagens agendadas
+    start(client);
+    setupScheduledMessages(client);
   })
   .catch((err) => console.log(err));
 
