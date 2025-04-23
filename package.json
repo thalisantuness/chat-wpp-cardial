@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "postinstall": "node node_modules/puppeteer/install.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
   "dependencies": {
     "axios": "^1.8.4",
     "node-cron": "^3.0.3",
-    "venom-bot": "^5.3.0"
+    "venom-bot": "^5.3.0",
+    "puppeteer": "^21.8.0"
   }
 }
