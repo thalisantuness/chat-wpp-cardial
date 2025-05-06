@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postinstall": "tar -xzvf tokens.tar.gz -C /tmp && mv /tmp/tokens/chatgpt-bot ./tokens/",
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
