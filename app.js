@@ -17,7 +17,7 @@ venom
       "--disable-gpu",
     ],
     puppeteerOptions: {
-      executablePath: process.env.CHROME_PATH || "/usr/bin/chromium",
+      executablePath: process.env.CHROME_PATH || "/usr/bin/chromium-browser",
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     },
     qrCode: (base64Qr, asciiQR) => {
