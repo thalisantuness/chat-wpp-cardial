@@ -1,2 +1,19 @@
-/node_modules/
-tokens.zip
+# Ignorar dependências
+/node_modules
+
+# Ignorar a pasta de tokens inteira por padrão
+/tokens/
+
+# --- EXCEÇÕES IMPORTANTES ---
+# Manter a pasta do perfil principal, pois ela contém a autenticação
+!/tokens/chatgpt-bot/Default/
+!/tokens/chatgpt-bot/Local State
+
+# Mas, dentro da pasta Default, ignorar as subpastas de cache
+/tokens/chatgpt-bot/Default/Cache/
+/tokens/chatgpt-bot/Default/Code Cache/
+/tokens/chatgpt-bot/Default/GPUCache/
+/tokens/chatgpt-bot/Default/GraphiteDawnCache/
+/tokens/chatgpt-bot/Default/GrShaderCache/
+/tokens/chatgpt-bot/Default/ShaderCache/
+/tokens/chatgpt-bot/Default/segmentation_platform/
