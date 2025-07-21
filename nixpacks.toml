@@ -1,0 +1,13 @@
+# nixpacks.toml
+
+# Define a lista de pacotes a serem instalados pelo apt-get
+[phases.setup]
+aptPkgs = ["chromium"]
+
+# Define a fase de instalação das dependências do Node.js
+[phases.install]
+cmds = ["npm install"]
+
+# Define o comando para iniciar a aplicação
+[phases.start]
+cmd = "npm start"

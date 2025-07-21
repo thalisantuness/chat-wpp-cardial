@@ -5,7 +5,7 @@ const qrcode = require("qrcode-terminal");
 venom
   .create({
     session: "chatgpt-bot",
-    headless: true,
+    headless: "new",
     browserArgs: [
       "--no-sandbox",
       "--disable-setuid-sandbox",
@@ -16,14 +16,14 @@ venom
       "--single-process",
       "--disable-gpu",
     ],
-    puppeteerOptions: {
-      executablePath: process.env.CHROME_PATH || "/usr/bin/chromium-browser",
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    },
-    qrCode: (base64Qr, asciiQR) => {
-      console.log("🔐 Escaneie o QR Code abaixo para autenticar no WhatsApp:");
-      qrcode.generate(base64Qr, { small: true });
-    },
+    // puppeteerOptions: {
+    //   executablePath: process.env.CHROME_PATH || "/usr/bin/chromium-browser",
+    //   args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    // },
+    // qrCode: (base64Qr, asciiQR) => {
+    //   console.log("🔐 Escaneie o QR Code abaixo para autenticar no WhatsApp:");
+    //   qrcode.generate(base64Qr, { small: true });
+    // },
   })
   .then((client) => {
     start(client);
