@@ -7,7 +7,7 @@
     "start": "node app.js",
     "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "sudo rm /bin/chromium-browser && sudo ln -s /usr/bin/chromium /bin/chromium-browser"
+    "postinstall": "sudo rm -f /bin/chromium-browser && sudo ln -s /usr/bin/chromium /bin/chromium-browser"
   },
   "keywords": [],
   "author": "",
